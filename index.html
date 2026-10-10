@@ -889,7 +889,7 @@ function renderAgora() {
 function renderPlay() {
   const on = !!(E && E.playing), b = $('play');
   b.setAttribute('aria-pressed', String(on)); b.setAttribute('aria-label', on ? 'Parar' : 'Tocar');
-  $('ico-play').hidden = on; $('ico-stop').hidden = !on;
+  $('ico-play').toggleAttribute('hidden', on); $('ico-stop').toggleAttribute('hidden', !on);
 }
 function syncSliders() { $('vol').value = state.volume; $('ousadia').value = state.ousadia; }
 function renderAll() { IDS.forEach(renderPedal); renderFonte(); renderChips(); renderAgora(); renderPlay(); }
